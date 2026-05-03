@@ -1,0 +1,59 @@
+/* Reset and Base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --ink: #1b1b1b;
+  --paper: #e8dcc4;
+  --blood: #8b0000;
+  --folder-tan: #c5ae7d;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* The Document Component Class */
+.document {
+  background: var(--paper);
+  background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+  color: var(--ink);
+  padding: 60px;
+  width: 100%;
+  max-width: 850px;
+  min-height: 1000px;
+  box-shadow: 20px 20px 60px rgba(0,0,0,0.9);
+  position: relative;
+  font-family: 'Courier New', Courier, monospace;
+  margin-bottom: 100px; /* Space for the nav bar */
+}
+
+/* Red Pen Styles for "Handwritten" notes */
+.red-pen {
+  color: var(--blood);
+  font-family: 'Brush Script MT', cursive; /* Fallback to a script font */
+  font-size: 1.3rem;
+  line-height: 1.2;
+}
+
+/* Buttons inside documents */
+button.primary-action {
+  background: var(--ink);
+  color: var(--paper);
+  border: none;
+  padding: 15px 30px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  margin-top: 20px;
+  transition: 0.2s;
+}
+
+button.primary-action:hover {
+  filter: invert(1);
+}
