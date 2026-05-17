@@ -1,34 +1,15 @@
-export const caseFile = {
-  title: "Gardenia Slayings Case File",
-  caseId: "RRP-2026-088",
-  victim: "Susan Amani",
-  time: "20 April 2026 - 6:15 AM",
+export const masterBureauKey = "ADMIN-99-OVERRIDE"; // The 1,000/- Master Code
 
-  suspects: [
-    {
-      name: "Michael Korir",
-      motive: "Divorce + will removal",
-      evidence: ["Glove with M.K.", "phone offline", "Mercedes seen"]
-    },
-    {
-      name: "Jan Snaw",
-      motive: "Affair exposure risk",
-      evidence: ["Diplomatic car", "CCTV gap", "access log"]
-    },
-    {
-      name: "Jane Toto",
-      motive: "KES 150M missing",
-      evidence: ["financial fraud", "near park sighting", "tools purchase"]
-    },
-    {
-      name: "Njoroge Njoroge",
-      motive: "Obsession with Gardenia killings",
-      evidence: ["notebook phrase match", "phone ping", "boot size match"]
-    },
-    {
-      name: "Zamzam Hamisi",
-      motive: "Connection to original case",
-      evidence: ["gardenia access", "knowledge of pattern"]
-    }
-  ]
+export const cases = {
+  "gardenia-slayings": {
+    title: "THE GARDENIA SLAYINGS",
+    caseCode: "GARDENIA", // Individual code
+    id: "RRP-2026-088"
+  },
+  "kamau-succession": {
+    title: "THE KAMAU SUCCESSION",
+    caseCode: "KIMBO2026",
+    id: "KSD-2026-012"
+  }
+  // Add more cases here
 };
