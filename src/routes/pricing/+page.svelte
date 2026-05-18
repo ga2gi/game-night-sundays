@@ -3,25 +3,27 @@
 
   const plans = [
     {
-      name: "Public Access",
+      name: "Community Access",
       price: "FREE",
-      description: "Access selected public case files at no cost.",
+      description: "Free case files available exclusively through the WhatsApp detective community.",
       features: [
-        "Access to free public cases",
-        "Standard evidence files",
-        "Single-case gameplay experience",
-        "Playable on mobile or desktop"
+        "Access to free community case files",
+        "Community-only access codes",
+        "Join detective discussions & theories",
+        "Playable on mobile or desktop",
+        "Includes Naomi Mwangi & Coffee House Murder"
       ],
-      cta: "OPEN ARCHIVE",
-      link: "/games",
-      external: false,
+      cta: "JOIN COMMUNITY",
+      link: "https://chat.whatsapp.com/LDB3Fdc2nfh8RhFaRt5fSj",
+      external: true,
       highlight: false
     },
+
     {
       name: "Field Agent",
       price: "250/-",
       unit: "per case",
-      description: "Unlock a single premium case file of your choice.",
+      description: "Unlock a single premium investigation file with full evidence access.",
       features: [
         "Access one premium case",
         "Full suspect and evidence archive",
@@ -34,6 +36,7 @@
       external: true,
       highlight: true
     },
+
     {
       name: "Bureau Chief",
       price: "1,000/-",
@@ -67,8 +70,8 @@
     </h1>
 
     <p>
-      Premium access keys are purchased securely through our HustleSasa store
-      and delivered instantly as downloadable PDF files with instructions.
+      Access classified investigations, unlock premium case archives,
+      and join the detective community behind Murder Mystery Games KE.
     </p>
   </header>
 
@@ -127,6 +130,16 @@
       <h3>BUREAU FAQ</h3>
 
       <div>
+
+        <div class="faq-item">
+          <p class="q">How do the free community cases work?</p>
+
+          <p class="a">
+            Free cases are only accessible through the official WhatsApp detective
+            community. Members receive access codes and updates directly in the group.
+          </p>
+        </div>
+
         <div class="faq-item">
           <p class="q">How do premium cases work?</p>
 
@@ -157,16 +170,26 @@
           <p class="q">Can I play with friends?</p>
 
           <p class="a">
-            Yes. Many players use the cases during group game nights and
-            investigation sessions.
+            Yes. Many players use the cases during group game nights,
+            virtual investigations, and team deduction sessions.
           </p>
         </div>
+
       </div>
     </div>
   </section>
 </main>
 
 <style>
+  :root {
+    --accent: #b02a2a;
+    --bg-dark: #050505;
+    --card-bg: #0a0a0c;
+    --text-dim: #888;
+    --border: #1c1c1c;
+    --mono: "Courier New", monospace;
+  }
+
   .pricing-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -209,11 +232,11 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-    align-items: flex-start;
+    align-items: stretch;
   }
 
   .plan-card {
-    background: #0a0a0c;
+    background: var(--card-bg);
     border: 1px solid var(--border);
     padding: 50px 40px;
     position: relative;
@@ -279,7 +302,7 @@
     color: #888;
     line-height: 1.6;
     margin-bottom: 30px;
-    min-height: 3rem;
+    min-height: 4rem;
   }
 
   .features-list {
