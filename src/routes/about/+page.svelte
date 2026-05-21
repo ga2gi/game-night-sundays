@@ -40,6 +40,11 @@
     {
       q: "Can I replay a case after solving it?",
       a: "Yes. Once unlocked, cases remain accessible so you can replay them with new friends or during future game nights."
+    },
+
+    {
+      q: "What goes on in the WhatsApp community?",
+      a: "Our WhatsApp community is the primary central hub where we host virtual community Sunday game nights, broadcast early drops, share exclusive file updates, and swap fan theories between cases."
     }
   ];
 </script>
@@ -154,7 +159,7 @@
 
   </section>
 
-  <!-- QUOTE -->
+  <!-- MANIFESTO -->
   <section class="manifesto">
 
     <div class="manifesto-box">

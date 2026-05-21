@@ -129,13 +129,22 @@
       <div class="cta-group" in:fly={{ y: 20, delay: 700 }}>
         <a href="/games" class="btn-main"> ACCESS CASE FILES </a>
 
-        <!-- CHANGED SECTION ONLY -->
         <a
           href="https://murdermysterygameske.hustlesasa.shop/"
           target="_blank"
           class="btn-main secondary"
         >
           SHOP CASES
+        </a>
+
+        <!-- WHATSAPP COMMUNITY LINK -->
+        <a
+          href="https://chat.whatsapp.com/LDB3Fdc2nfh8RhFaRt5fSj"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-main secondary whatsapp-btn"
+        >
+          JOIN COMMUNITY
         </a>
       </div>
     </div>
@@ -225,6 +234,7 @@
     --text: #ffffff;
     --muted: #8d93a8;
     --accent: #b12020;
+    --whatsapp-green: #25d366;
   }
 
   .page-wrapper {
@@ -357,6 +367,14 @@
   .btn-main.secondary:hover {
     background: var(--accent);
     color: white;
+  }
+
+  /* Target specifically the WhatsApp community button for unique hover colors */
+  .btn-main.secondary.whatsapp-btn:hover {
+    background: var(--whatsapp-green);
+    border-color: var(--whatsapp-green);
+    color: #000000;
+    box-shadow: 0 0 30px rgba(37, 211, 102, 0.3);
   }
 
   .pricing-mini {
@@ -528,3 +546,5 @@
     .btn-main, .pricing-mini { width: 100%; max-width: 320px; text-align: center; }
   }
 </style>
+
+```
