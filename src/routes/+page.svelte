@@ -52,7 +52,7 @@
     },
     {
       id: 'naomi-mwangi',
-      title: 'THE PENTHOUSE SILENCE',
+      title: 'NAOMI MWANGIS MURDER',
       price: 'FREE',
       difficulty: 'Intermediate',
       tagline: 'CASE: NMM-2025-009',

@@ -14,6 +14,17 @@
 
   // HustleSasa Agent Access Link
   const agentAccessLink = 'https://murdermysterygameske.hustlesasa.shop';
+
+  // Mobile menu open/closed state
+  let isMobileMenuOpen = $state(false);
+
+  function toggleMobileMenu() {
+    isMobileMenuOpen = !isMobileMenuOpen;
+  }
+
+  function closeMobileMenu() {
+    isMobileMenuOpen = false;
+  }
 </script>
 
 <svelte:head>
@@ -36,7 +47,7 @@
 
       <!-- LOGO -->
       <div class="logo">
-        <a href="/">
+        <a href="/" onclick={closeMobileMenu}>
           <img
             src="/logo.png"
             alt="Murder Mystery Games KE"
@@ -45,8 +56,8 @@
         </a>
       </div>
 
-      <!-- NAV LINKS -->
-      <nav>
+      <!-- NAV LINKS (DESKTOP) -->
+      <nav class="desktop-nav">
         <ul class="nav-links">
           {#each navLinks as link}
             <li>
@@ -61,7 +72,7 @@
         </ul>
       </nav>
 
-      <!-- AGENT ACCESS -->
+      <!-- AGENT ACCESS (DESKTOP) -->
       <div class="nav-actions">
         <a
           href={agentAccessLink}
@@ -74,8 +85,54 @@
         </a>
       </div>
 
+      <!-- MOBILE HAMBURGER BUTTON -->
+      <button 
+        class="mobile-menu-toggle" 
+        onclick={toggleMobileMenu}
+        aria-label="Toggle Navigation Menu"
+        class:open={isMobileMenuOpen}
+      >
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
     </div>
   </header>
+
+  <!-- MOBILE NAVIGATION DRAWER -->
+  {#if isMobileMenuOpen}
+    <div class="mobile-drawer" transition:fade={{ duration: 200 }}>
+      <nav class="mobile-nav">
+        <ul class="mobile-nav-links">
+          {#each navLinks as link}
+            <li>
+              <a
+                href={link.path}
+                class:active={$page.url.pathname === link.path}
+                onclick={closeMobileMenu}
+              >
+                {link.name}
+              </a>
+            </li>
+          {/each}
+        </ul>
+        
+        <div class="mobile-nav-actions">
+          <a
+            href={agentAccessLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-terminal"
+            onclick={closeMobileMenu}
+          >
+            <span class="status-dot"></span>
+            AGENT ACCESS
+          </a>
+        </div>
+      </nav>
+    </div>
+  {/if}
 
   <!-- MAIN -->
   <main>
@@ -339,6 +396,94 @@
     0 0 10px var(--accent);
 }
 
+/* MOBILE MENU HAMBURGER ELEMENT */
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 22px;
+  height: 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+
+.mobile-menu-toggle .bar {
+  width: 100%;
+  height: 2px;
+  background-color: var(--text-main);
+  transition: all 0.3s ease;
+}
+
+/* Hamburger animations when menu is open */
+.mobile-menu-toggle.open .bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+  background-color: var(--accent);
+}
+
+.mobile-menu-toggle.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle.open .bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+  background-color: var(--accent);
+}
+
+/* MOBILE DRAWER INTERFACE */
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(5, 5, 5, 0.98);
+  backdrop-filter: blur(20px);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.5rem;
+  width: 100%;
+}
+
+.mobile-nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.mobile-nav-links a {
+  text-decoration: none;
+  color: var(--text-dim);
+  font-family: var(--mono);
+  font-size: 1.1rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.mobile-nav-links a:hover,
+.mobile-nav-links a.active {
+  color: var(--accent);
+}
+
+.mobile-nav-actions {
+  margin-top: 1rem;
+}
+
 /* MAIN */
 main {
   flex: 1;
@@ -446,13 +591,18 @@ main {
 /* RESPONSIVE */
 @media (max-width: 950px) {
 
-  .nav-links,
+  .desktop-nav,
   .nav-actions {
     display: none;
   }
 
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
   .nav-inner {
-    justify-content: center;
+    justify-content: space-between;
+    padding: 0 1.5rem;
   }
 
   .logo-img {
