@@ -5,7 +5,7 @@
   let unlocked = $state(false);
   let error = $state(false);
 
-  // Updated authorization code based on configuration instructions
+  // Default authorization code set to configuration specifications
   const CORRECT_CODE = "1212"; 
 
   function unlock() {
@@ -34,7 +34,7 @@
         <span class="lock-label">ENCRYPTED FILE // ARCHIVE EK-1212</span>
       </div>
 
-      <h2>FINAL RESOLUTION</h2>
+      <h2 class="lock-title">FINAL RESOLUTION</h2>
 
       <p class="hint">
         Enter authorization code to access full investigative findings.
@@ -46,10 +46,10 @@
           bind:value={accessCode}
           placeholder="ENTER CODE"
           class:error={error}
-          on:keydown={(e) => e.key === 'Enter' && unlock()}
+          onkeydown={(e) => e.key === 'Enter' && unlock()}
         />
 
-        <button class="btn-unlock" on:click={unlock}>
+        <button class="btn-unlock" onclick={unlock}>
           AUTHORIZE
         </button>
       </div>
@@ -83,45 +83,55 @@
       </header>
 
       <!-- FINDINGS -->
-      <section>
-        <h2>DETECTIVE FINDINGS</h2>
+      <section class="findings-section">
+        <h2 class="dossier-title">DETECTIVE FINDINGS</h2>
 
         <ul>
-          <li><strong>Victor Kamau:</strong> Found at the foot of the table during the incident. While missing a family cufflink, his left-dominant handling of glassware is physically incompatible with the placement of forensics at his original seating position.</li>
+          <li>
+            <strong>Victor Kamau (The Target):</strong> Completely exonerated. His left-dominant handling of glassware contradicts the physical location of the honey spills and cufflink dropped on the right side of his original setting. He was the intended victim.
+          </li>
 
-          <li><strong>Grace Kamau:</strong> Discovered with a sedative syrup jar in her handbag. Forensics confirmed the liquid is non-toxic valerian root rather than the lethal alkaloid used in the homicide.</li>
+          <li>
+            <strong>Edward Kamau (The Casualty):</strong> Accidentally intercepted the assassination plot. His unpredictable sentimentality caused him to drain Victor&rsquo;s cocktail entirely during the blessing ritual, consuming the lethal dose intended for his eldest son.
+          </li>
 
-          <li><strong>Brian Kamau:</strong> Swapped seats as a practical joke ten minutes prior to dinner. Hands were coated in distinct ochre paint matching residue found on his beer glass; no trace elements found near the targeted drink.</li>
+          <li>
+            <strong>Brian Kamau:</strong> Unintentionally disrupted the murder plot. His last-minute seating prank forced Victor away from the poisoned glass, saving Victor&rsquo;s life and dooming their father.
+          </li>
 
-          <li><strong>Lisa Kamau:</strong> Reported observing a masculine sleeve with a single gold cufflink doctoring a glass before dinner. Browser history confirmed exploratory research on local flora/poison alternatives.</li>
-
-          <li><strong>Chloe Kamau:</strong> Escaped immediate forensic link. Observed crying and screaming following the collapse, noting immediate and intense physical panic from adjacent family members.</li>
+          <li>
+            <strong>Lisa &amp; Chloe Kamau:</strong> Forensically cleared. Lisa&rsquo;s research on monkshood was weaponized by the true killer as a psychological red herring to misdirect police scrutiny.
+          </li>
         </ul>
       </section>
 
       <!-- CONCLUSION -->
-      <section>
-        <h2>CASE CONCLUSION</h2>
+      <section class="conclusion-section">
+        <h2 class="dossier-title">CASE CONCLUSION</h2>
 
         <div class="killer-box">
           <h1 class="killer">DAVID KAMAU</h1>
-          <p class="subtitle">PRIMARY PERPETRATOR // CONFIRMED</p>
+          <p class="subtitle">PRIMARY PERPETRATOR // TARGET: VICTOR KAMAU</p>
         </div>
 
         <p>
-          David Kamau planned and executed the murder of his father, Edward Kamau, using a lethal dose of <em>mũthaiga</em> (Kenyan monkshood) extract. His intent was to secure the family empire while seamlessly framing his older brother, Victor.
+          David Kamau planned and executed the poisoning of Victor&rsquo;s <em>dawa</em> glass using a lethal concentration of <strong>mũthaiga</strong> extract. His true objective was to assassinate his older brother, Victor, to protect his newly discovered inheritance.
         </p>
 
         <p>
-          David's alibi collapsed under critical logical contradictions. In his statement, he claimed immunity from suspicion by citing his father's draft email, noting he was already designated the sole heir. However, that email was drafted at 4:17 PM and locked in Edward's private safe—completely unannounced to the household. David's premature knowledge proves he illegally intercepted the data earlier that afternoon.
+          David&rsquo;s alibi contained a fatal logical error: he claimed he had no reason to kill his father because Edward&rsquo;s draft email already named him sole heir. However, that email was drafted at 4:17 PM and locked in a private safe. David&rsquo;s precise knowledge of its contents proves he broke into the safe prior to dinner. 
         </p>
 
         <p>
-          Forensics confirmed that the single gold family crest cufflink found wedged on the <strong>right side</strong> of Victor's original seat arrangement matches David's bare left sleeve. While standing over the glass to poison the drink and mask it with excessive honey, David's left arm brushed against the tablecloth, tearing the cufflink away.
+          Upon learning he was the successor, David realized Victor still had &ldquo;one final chance to explain himself&rdquo; to Edward after dinner. Fearing Victor&rsquo;s corporate manipulation would reverse the decision, and wanting to prevent Victor from ever contesting the new will, David poisoned Victor&rsquo;s cocktail before guests arrived.
         </p>
 
         <p>
-          David failed to anticipate Brian's last-minute seating switch. When Brian sat in Victor's chair, the poisoned drink remained behind. This forced Edward to unexpectedly drain the whole glass during the "Blessing Cup" ritual instead of taking a routine sip, instantly closing the trap prematurely.
+          Physical forensics confirm David&rsquo;s guilt. The single gold family crest cufflink wedged on the <strong>right side</strong> of Victor&rsquo;s original seat matches David&rsquo;s bare left sleeve. While reaching across to add the messy honey and poison, his cufflink caught on the tablecloth and tore free.
+        </p>
+
+        <p>
+          David watched in silent horror as Brian&rsquo;s seating joke left the poisoned cocktail sitting empty in front of Edward, who broke tradition and drained the glass, turning David&rsquo;s flawless corporate assassination into an accidental patricide.
         </p>
       </section>
 
@@ -185,7 +195,7 @@
     letter-spacing: 2px;
   }
 
-  h2 {
+  .lock-title {
     margin: 20px 0;
   }
 
@@ -226,6 +236,7 @@
   .error-text {
     color: #ff5555;
     font-size: 0.7rem;
+    margin-top: 5px;
   }
 
   /* DOSSIER */
@@ -283,21 +294,28 @@
     margin-bottom: 35px;
   }
 
-  h2 {
+  .dossier-title {
     background: #222;
     color: #e8e2d6;
     display: inline-block;
     padding: 5px 10px;
     font-size: 0.9rem;
+    margin-top: 0;
   }
 
   ul {
     margin-top: 15px;
+    padding-left: 20px;
   }
 
   li {
     margin-bottom: 12px;
     line-height: 1.5;
+  }
+
+  p {
+    line-height: 1.6;
+    margin-bottom: 16px;
   }
 
   /* KILLER */
@@ -318,6 +336,8 @@
     font-size: 0.75rem;
     font-weight: bold;
     color: #444;
+    margin-top: 5px;
+    margin-bottom: 0;
   }
 
   /* FOOTER */

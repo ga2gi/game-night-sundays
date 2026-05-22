@@ -7,19 +7,15 @@
       tag: "EVIDENCE #001",
       icon: "🥃",
       color: "#ff5555",
-      description:
-        "The dawa glass originally placed at Victor Kamau’s seat, later consumed by Edward during the blessing ritual.",
-      forensics:
-        "Contains vodka, lime, excessive wild honey, sugar, and lethal mũthaiga alkaloid (Kenyan monkshood). Poison exists only in this glass.",
-      contradiction:
-        "Victor insists he never touched the glass after moving seats. Edward unexpectedly drank the entire contents during the blessing ritual.",
+      description: "The dawa glass originally placed at Victor Kamau’s seat, later consumed by Edward during the blessing ritual.",
+      forensics: "Contains vodka, lime, excessive wild honey, sugar, and lethal mũthaiga alkaloid (Kenyan monkshood). Poison exists only in this glass.",
+      contradiction: "Victor insists he never touched the glass after moving seats. Edward unexpectedly drank the entire contents during the blessing ritual.",
       excerpt: `KEY OBSERVATIONS:
 • Sugared rim smudged and uneven
 • Honey unusually thick and syrupy
 • Poison present ONLY in this glass
 • No contamination in any other drink`
     },
-
     {
       id: "seating-chaos",
       type: "Scene Reconstruction",
@@ -27,18 +23,14 @@
       tag: "EVIDENCE #002",
       icon: "🪑",
       color: "#bd93f9",
-      description:
-        "Brian sat in Victor’s seat as a joke, triggering a chain of seating changes before the blessing ritual began.",
-      forensics:
-        "Victor moved to the ancestral seat. His drink remained in original position, now exposed to open access during ritual circulation.",
-      contradiction:
-        "Multiple glass positions changed hands visually, but only Victor’s glass contained poison.",
+      description: "Brian sat in Victor’s seat as a joke, triggering a chain of seating changes before the blessing ritual began.",
+      forensics: "Victor moved to the ancestral seat. His drink remained in original position, now exposed to open access during ritual circulation.",
+      contradiction: "Multiple glass positions changed hands visually, but only Victor’s glass contained poison.",
       excerpt: `MOVEMENT PATH:
 Brian → Victor’s seat (temporary)
 Victor → ancestral seat
 Edward → moved clockwise drinking all glasses`
     },
-
     {
       id: "honey-stain",
       type: "Trace Evidence",
@@ -46,18 +38,14 @@ Edward → moved clockwise drinking all glasses`
       tag: "EVIDENCE #003",
       icon: "🍯",
       color: "#f1fa8c",
-      description:
-        "A sticky honey stain was found near Victor’s original place setting on the tablecloth.",
-      forensics:
-        "Honey composition matches the dawa glass mixture. Ant trail suggests spill or deliberate residue transfer.",
-      contradiction:
-        "No witness confirms spilling occurred. Suggests pre- or post-placement contamination.",
+      description: "A sticky honey stain was found near Victor’s original place setting on the tablecloth.",
+      forensics: "Honey composition matches the dawa glass mixture. Ant trail suggests spill or deliberate residue transfer.",
+      contradiction: "No witness confirms spilling occurred. Suggests pre- or post-placement contamination.",
       excerpt: `OBSERVATIONS:
 • Honey stain right of Victor’s seat
 • Ant trail moving toward glass position
 • Suggests deliberate handling or leakage`
     },
-
     {
       id: "email-will",
       type: "Digital Evidence",
@@ -65,17 +53,13 @@ Edward → moved clockwise drinking all glasses`
       tag: "EVIDENCE #004",
       icon: "📧",
       color: "#50fa7b",
-      description:
-        "Draft email sent to family lawyer Gideon Muthoka hours before dinner.",
-      forensics:
-        "Confirms David as intended successor and planned confrontation with Victor regarding merger forgery.",
-      contradiction:
-        "Establishes motive conflict between heirs and imminent restructuring of inheritance.",
+      description: "Draft email sent to family lawyer Gideon Muthoka hours before dinner.",
+      forensics: "Confirms David as intended successor and planned confrontation with Victor regarding merger forgery.",
+      contradiction: "Establishes motive conflict between heirs and imminent restructuring of inheritance.",
       excerpt: `“David is named sole successor in the safe.
 Victor will be given final chance to explain merger forgery.
 After dinner, we execute the new will.”`
     },
-
     {
       id: "bible-note",
       type: "Cultural Evidence",
@@ -83,16 +67,12 @@ After dinner, we execute the new will.”`
       tag: "EVIDENCE #005",
       icon: "📖",
       color: "#ffb86c",
-      description:
-        "Found in the Book of Cain and Abel with a Kikuyu proverb highlighted in fresh ink.",
-      forensics:
-        "Ink analysis suggests recent handling before dinner. Indicates premeditated symbolic framing.",
-      contradiction:
-        "No clear author identified; appears placed deliberately as moral commentary.",
+      description: "Found in the Book of Cain and Abel with a Kikuyu proverb highlighted in fresh ink.",
+      forensics: "Ink analysis suggests recent handling before dinner. Indicates premeditated symbolic framing.",
+      contradiction: "No clear author identified; appears placed deliberately as moral commentary.",
       excerpt: `“Kĩrĩra kĩa mũcingiri gĩtirĩ kĩenyũ.”
 (The cry of the poisoner has no echo.)`
     },
-
     {
       id: "security-log",
       type: "Surveillance Evidence",
@@ -100,17 +80,13 @@ After dinner, we execute the new will.”`
       tag: "EVIDENCE #006",
       icon: "📹",
       color: "#8be9fd",
-      description:
-        "Dining room cameras were disabled at 6:00 PM under Edward’s instructions.",
-      forensics:
-        "Hallway footage confirms all six suspects entered between 6:30–6:45 PM. No exits recorded until collapse.",
-      contradiction:
-        "Critical moment of poisoning occurs during unrecorded window.",
+      description: "Dining room cameras were disabled at 6:00 PM under Edward’s instructions.",
+      forensics: "Hallway footage confirms all six suspects entered between 6:30–6:45 PM. No exits recorded until collapse.",
+      contradiction: "Critical moment of poisoning occurs during unrecorded window.",
       excerpt: `• Camera OFF at 6:00 PM
 • Entry recorded 6:30–6:45 PM
 • No recorded exits before death`
     },
-
     {
       id: "empty-vial",
       type: "Physical Evidence",
@@ -118,17 +94,13 @@ After dinner, we execute the new will.”`
       tag: "EVIDENCE #007",
       icon: "🧪",
       color: "#ff5555",
-      description:
-        "Found in kitchen bin, wiped clean of fingerprints.",
-      forensics:
-        "Smells of wild honey and herbal liquorice note consistent with mũthaiga preparation.",
-      contradiction:
-        "No confirmed handler; suggests deliberate disposal after use.",
+      description: "Found in kitchen bin, wiped clean of fingerprints.",
+      forensics: "Smells of wild honey and herbal liquorice note consistent with mũthaiga preparation.",
+      contradiction: "No confirmed handler; suggests deliberate disposal after use.",
       excerpt: `• Cleaned vial
 • Honey residue smell
 • Possible poison container`
     },
-
     {
       id: "cufflink",
       type: "Trace Identity Evidence",
@@ -136,17 +108,13 @@ After dinner, we execute the new will.”`
       tag: "EVIDENCE #008",
       icon: "🟡",
       color: "#f1fa8c",
-      description:
-        "Found under tablecloth near Victor’s original seat.",
-      forensics:
-        "Identical cufflinks owned by multiple family members. Cannot be attributed to a single individual.",
-      contradiction:
-        "Victor missing one cufflink; others also possess identical sets.",
+      description: "Found under tablecloth near Victor’s original seat.",
+      forensics: "Identical cufflinks owned by multiple family members. Cannot be attributed to a single individual.",
+      contradiction: "Victor missing one cufflink; others also possess identical sets.",
       excerpt: `• Found near Victor’s seat
 • Family crest engraving
 • Multiple owners possible`
     },
-
     {
       id: "victor-note",
       type: "Document Evidence",
@@ -154,15 +122,11 @@ After dinner, we execute the new will.”`
       tag: "EVIDENCE #009",
       icon: "📝",
       color: "#ff5555",
-      description:
-        "Recovered from study waste bin, partially destroyed.",
-      forensics:
-        "Handwriting confirmed as Victor Kamau.",
-      contradiction:
-        "Missing context makes intent unclear.",
+      description: "Recovered from study waste bin, partially destroyed.",
+      forensics: "Handwriting confirmed as Victor Kamau.",
+      contradiction: "Missing context makes intent unclear.",
       excerpt: `“…tonight must be his last decision…”`
     },
-
     {
       id: "grace-syrup",
       type: "Chemical Evidence",
@@ -170,17 +134,13 @@ After dinner, we execute the new will.”`
       tag: "EVIDENCE #010",
       icon: "🫙",
       color: "#bd93f9",
-      description:
-        "Found in Grace Kamau’s handbag.",
-      forensics:
-        "Contains valerian-root sedative. Non-lethal but psychoactive.",
-      contradiction:
-        "Grace admits regular use in Edward’s tea.",
+      description: "Found in Grace Kamau’s handbag.",
+      forensics: "Contains valerian-root sedative. Non-lethal but psychoactive.",
+      contradiction: "Grace admits regular use in Edward’s tea.",
       excerpt: `• Sedative syrup
 • Non-toxic
 • Habitual use admitted`
     },
-
     {
       id: "lisa-phone",
       type: "Digital Behavior",
@@ -188,15 +148,11 @@ After dinner, we execute the new will.”`
       tag: "EVIDENCE #011",
       icon: "📱",
       color: "#8be9fd",
-      description:
-        "Browser history reveals research query two days before dinner.",
-      forensics:
-        "Search suggests knowledge of poison masking techniques.",
-      contradiction:
-        "Lisa claims research for novel writing.",
+      description: "Browser history reveals research query two days before dinner.",
+      forensics: "Search suggests knowledge of poison masking techniques.",
+      contradiction: "Lisa claims research for novel writing.",
       excerpt: `“Can monkshood be masked by honey?”`
     },
-
     {
       id: "brian-receipt",
       type: "Financial Evidence",
@@ -204,17 +160,13 @@ After dinner, we execute the new will.”`
       tag: "EVIDENCE #012",
       icon: "🧾",
       color: "#50fa7b",
-      description:
-        "Receipt for mũthaiga root purchased four days before dinner.",
-      forensics:
-        "Linked to herbal preparation consistent with poison source plant.",
-      contradiction:
-        "Brian claims it was for a harmless joint pain poultice.",
+      description: "Receipt for mũthaiga root purchased four days before dinner.",
+      forensics: "Linked to herbal preparation consistent with poison source plant.",
+      contradiction: "Brian claims it was for a harmless joint pain poultice.",
       excerpt: `• Purchased mũthaiga root
 • Herbalist transaction confirmed
 • Associated paste found`
     },
-
     {
       id: "housekeeper",
       type: "Witness Statement",
@@ -222,19 +174,15 @@ After dinner, we execute the new will.”`
       tag: "EVIDENCE #013",
       icon: "👁️",
       color: "#ffb86c",
-      description:
-        "Verbal report before dinner escalation.",
-      forensics:
-        "Credible witness account of emotional confrontation.",
-      contradiction:
-        "No physical evidence linking threat to action.",
+      description: "Verbal report before dinner escalation.",
+      forensics: "Credible witness account of emotional confrontation.",
+      contradiction: "No physical evidence linking threat to action.",
       excerpt: `“I wish you would just disappear for once!” — Chloe Kamau`
     }
   ];
 </script>
 
 <div class="desk-surface">
-
   <div class="evidence-header">
     <span class="stamp">CONFIDENTIAL CASE FILE</span>
     <h1>KSD-2026-001 // EVIDENCE LOCKER</h1>
@@ -253,7 +201,6 @@ After dinner, we execute the new will.”`
   <div class="evidence-grid">
     {#each evidenceItems as item}
       <div class="evidence-item">
-
         <div class="artifact-graphic" style="--accent: {item.color}">
           <div class="graphic-header">{item.type}</div>
           <div class="graphic-main">
@@ -265,7 +212,6 @@ After dinner, we execute the new will.”`
 
         <div class="analysis-card">
           <h2>{item.title}</h2>
-
           <p><strong>FIELD:</strong> {item.description}</p>
 
           {#if item.excerpt}
@@ -273,6 +219,9 @@ After dinner, we execute the new will.”`
               <strong>RECOVERED DATA:</strong>
               <pre>{item.excerpt}</pre>
             </div>
+          {:else}
+            <!-- Fallback container to maintain layout rhythm if data is missing -->
+            <div class="evidence-excerpt-placeholder"></div>
           {/if}
 
           <div class="forensic-box">
@@ -282,7 +231,6 @@ After dinner, we execute the new will.”`
 
           <p class="red-pen">{item.contradiction}</p>
         </div>
-
       </div>
     {/each}
   </div>
@@ -292,7 +240,6 @@ After dinner, we execute the new will.”`
       PROCEED TO ACCUSATION ⚖️
     </a>
   </div>
-
 </div>
 
 <style>
@@ -343,18 +290,13 @@ After dinner, we execute the new will.”`
     text-decoration: none;
     color: #e8dcc4;
     padding: 10px 14px;
-    border: 1px solid rgba(255,255,255,0.15);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     font-size: 0.7rem;
     letter-spacing: 2px;
-    transition: 0.2s;
+    transition: background 0.2s, border-color 0.2s;
   }
 
-  .case-nav a:hover {
-    background: #8b0000;
-    border-color: #8b0000;
-  }
-
-  .active {
+  .case-nav a:hover, .case-nav a.active {
     background: #8b0000;
     border-color: #8b0000;
   }
@@ -371,9 +313,9 @@ After dinner, we execute the new will.”`
     display: grid;
     grid-template-columns: 280px 1fr;
     gap: 35px;
-    background: rgba(255,255,255,0.02);
+    background: rgba(255, 255, 255, 0.02);
     padding: 20px;
-    border: 1px solid rgba(255,255,255,0.05);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(6px);
   }
 
@@ -383,7 +325,7 @@ After dinner, we execute the new will.”`
     height: 240px;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 0 25px rgba(0,0,0,0.6);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
   }
 
   .graphic-header {
@@ -434,7 +376,7 @@ After dinner, we execute the new will.”`
     color: #111;
     padding: 25px;
     border-left: 4px solid #8b0000;
-    box-shadow: inset 0 0 20px rgba(0,0,0,0.05);
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.05);
   }
 
   .analysis-card h2 {
@@ -447,7 +389,7 @@ After dinner, we execute the new will.”`
   .evidence-excerpt {
     margin: 18px 0;
     padding: 15px;
-    background: rgba(0,0,0,0.05);
+    background: rgba(0, 0, 0, 0.05);
     border: 1px dashed #999;
   }
 
@@ -455,13 +397,14 @@ After dinner, we execute the new will.”`
     white-space: pre-wrap;
     font-family: 'Courier New', monospace;
     font-size: 0.82rem;
+    margin: 0;
   }
 
   .forensic-box {
     margin: 15px 0;
     padding: 12px;
     border-left: 4px solid #8b0000;
-    background: rgba(0,0,0,0.05);
+    background: rgba(0, 0, 0, 0.05);
   }
 
   .red-pen {
@@ -484,7 +427,8 @@ After dinner, we execute the new will.”`
     text-decoration: none;
     font-weight: bold;
     letter-spacing: 2px;
-    transition: 0.2s;
+    transition: background 0.2s, transform 0.2s;
+    display: inline-block;
   }
 
   .proceed-btn:hover {
@@ -495,6 +439,11 @@ After dinner, we execute the new will.”`
   @media (max-width: 800px) {
     .evidence-item {
       grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    
+    .artifact-graphic {
+      height: 180px;
     }
   }
 </style>

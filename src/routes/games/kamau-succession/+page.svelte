@@ -4,7 +4,7 @@
   const timeline = [
     {
       time: "6:30 PM",
-      event: "Guests begin arriving at the Kamau estate on Miotoni Road, Karen."
+      event: "Guests begin arriving at the Kamau estate on Miotoni Road, Karen. Hallway camera captures suspects entering between 6:30 and 6:45 PM."
     },
     {
       time: "6:45 PM",
@@ -12,51 +12,51 @@
     },
     {
       time: "7:10 PM",
-      event: "Housekeeper overhears Chloe shouting at Edward upstairs."
+      event: "Housekeeper overhears Chloe shouting at Edward upstairs: 'I wish you would just disappear for once!'"
     },
     {
       time: "7:20 PM",
-      event: "Brian jokingly takes Victor’s seat before dinner begins."
+      event: "Brian jokingly takes Victor’s seat before dinner begins, sparking an immediate confrontation."
     },
     {
       time: "7:21 PM",
-      event: "Victor becomes furious. Edward orders Victor to sit at the ancestor seat instead."
+      event: "Victor flies into a rage. Edward laughs it off and commands Victor to take the empty ancestral seat at the foot of the table instead."
     },
     {
       time: "7:40 PM",
-      event: "Main course of nyama choma and irio cleared from table."
+      event: "Main course of slow-roasted nyama choma and irio is cleared from the table. Atmosphere remains sharp."
     },
     {
       time: "7:43 PM",
-      event: "Edward announces the traditional blessing ritual."
+      event: "Edward announces the traditional family blessing ritual cup to seal the future."
     },
     {
       time: "7:44 PM",
-      event: "Edward drinks from Lisa’s wine glass."
+      event: "Edward sips from Lisa’s chardonnay."
     },
     {
       time: "7:45 PM",
-      event: "Edward drinks from Brian’s Tusker beer."
+      event: "Edward sips from Brian’s Tusker beer."
     },
     {
       time: "7:46 PM",
-      event: "Edward drinks from Chloe’s passion martini."
+      event: "Edward sips from Chloe’s passion martini."
     },
     {
       time: "7:47 PM",
-      event: "Edward drinks from David’s scotch."
+      event: "Edward sips from David’s scotch—giving a silent nod of approval."
     },
     {
       time: "7:48 PM",
-      event: "Edward reaches Victor’s original place setting and drinks the entire dawa."
+      event: "Edward reaches Victor’s original place setting and notes the remarkable taste of the honey before draining the entire contents of the dawa."
     },
     {
       time: "7:51 PM",
-      event: "Edward Kamau collapses onto the dining table."
+      event: "Edward Kamau's hands fly to his throat. He suffers heavy convulsions and collapses onto the mũgumo table."
     },
     {
       time: "7:54 PM",
-      event: "Edward pronounced dead inside dining room."
+      event: "Edward pronounced dead inside dining room before emergency services can be signaled."
     }
   ];
 </script>
@@ -67,24 +67,15 @@
   <div class="case-navigation">
     <a href="/games/kamau-succession" class="nav-link active">INCIDENT REPORT</a>
 
-    <a
-      href="/games/kamau-succession/evidence"
-      class="nav-link"
-    >
+    <a href="/games/kamau-succession/evidence" class="nav-link">
       EVIDENCE
     </a>
 
-    <a
-      href="/games/kamau-succession/suspects"
-      class="nav-link"
-    >
+    <a href="/games/kamau-succession/suspects" class="nav-link">
       SUSPECTS
     </a>
 
-    <a
-      href="/games/kamau-succession/accuse"
-      class="nav-link"
-    >
+    <a href="/games/kamau-succession/accuse" class="nav-link">
       ACCUSATION
     </a>
   </div>
@@ -135,72 +126,54 @@
     </p>
 
     <p>
-      Edward Kamau, founder of Kamau Tea & Coffee Estates,
-      had summoned all his children and his wife to dinner.
+      Edward Kamau, the self-made titan of Kamau Tea &amp; Coffee Estates,
+      had summoned all his children and his wife to dinner. The handwritten invitation 
+      on heavy, cream-coloured paper read:
     </p>
 
     <div class="mini-document note-box">
-      “To celebrate the harvest, and to settle the future.”
+      &ldquo;To celebrate the harvest, and to settle the future.&rdquo;
     </div>
 
     <p>
-      For weeks, Nairobi’s legal circles had whispered about changes to the family will.
-      Someone at that table was about to gain power.
-      Someone else was about to lose everything.
+      For weeks, Nairobi&rsquo;s legal circles had whispered that the will was about to be rewritten. 
+      Someone at that table was about to rise; someone else was about to fall.
     </p>
 
     <p>
-      The Kamau family maintained a long-standing tradition involving ceremonial
-      gold cufflinks engraved with the family crest —
-      a coffee branch crossed with a spear.
-    </p>
-
-    <p>
-      Identical cufflink sets had been commissioned over the years for multiple
-      members of the family.
-    </p>
-
-    <p>
-      During dinner, tensions escalated beneath polite conversation.
-      Witnesses describe the atmosphere as “hostile but controlled.”
-    </p>
-
-    <p>
-      Edward eventually rose from the table and announced the family blessing ritual.
+      By the time the main course was cleared, the air between them was sharp as a panga. 
+      Insults were dressed up as family jokes, and ancient wounds were politely reopened. 
+      Edward eventually rose from the table to initiate the old family blessing cup ritual.
     </p>
 
     <div class="detective-note">
 
-      <strong>BLESSING RITUAL</strong>
+      <strong>BLESSING RITUAL METRIC</strong>
 
       <ul>
         <li>
-          Edward drank from the glass of each child in sequence.
+          The head of the family must take a sip from the glass of each child to seal the ancestral bond.
         </li>
 
         <li>
-          He reached Victor’s original place setting last.
+          Edward circled the table counter-clockwise: Lisa, Brian, Chloe, David, then Victor&rsquo;s original place setting.
         </li>
 
         <li>
-          Victor’s dawa contained vodka, lime, wild honey, and a sugared rim.
+          Upon reaching the dawa glass at Victor's empty original seat, Edward smiled, made a brief comment, and unexpectedly drained the entire glass.
         </li>
 
         <li>
-          Edward consumed the entire contents of the dawa glass.
-        </li>
-
-        <li>
-          Within minutes, he collapsed and died.
+          Within three minutes, respiratory failure and convulsions occurred. Target hit the floor dead.
         </li>
       </ul>
 
     </div>
 
     <div class="mini-document">
-      Final recorded statement from Edward Kamau:<br><br>
+      Final recorded words from Edward Kamau before collapse:<br><br>
 
-      “This honey is… remarkable.”
+      <strong>&ldquo;This honey is&hellip; remarkable.&rdquo;</strong>
     </div>
 
   </section>
@@ -210,32 +183,24 @@
 
     <div class="section-tag">CRIME SCENE REPORT</div>
 
-    <h3>The Dining Room</h3>
+    <h3>The Dining Room &amp; Setup</h3>
 
     <p>
-      The incident occurred inside the Kamau family dining room —
-      a long rectangular chamber centred around a polished wild olive wood table.
+      The incident occurred inside the primary dining room around a long rectangular table made of wild olive wood.
     </p>
 
     <div class="staging-box">
 
-      <h4 class="warning-text">ROOM LAYOUT</h4>
+      <h4 class="warning-text">ROOM LAYOUT &amp; ORIGINAL PLAN</h4>
 
       <ul>
-        <li><strong>North Head:</strong> Edward Kamau</li>
+        <li><strong>North Head:</strong> Edward Kamau (Scotch glass etched &ldquo;E&rdquo;)</li>
+
+        <li><strong>South Foot:</strong> Empty chair set symbolically for the ancestors</li>
 
         <li>
-          <strong>South Foot:</strong>
-          Empty ancestral chair
-        </li>
-
-        <li>
-          <strong>Original Seating Order:</strong>
-          Victor → Lisa → Brian → Ancestor Seat → Chloe → David → Grace
-        </li>
-
-        <li>
-          Victor’s original place setting contained the poisoned dawa.
+          <strong>Clockwise Seating Array:</strong> 
+          Victor (Dawa) &rarr; Lisa (White Wine) &rarr; Brian (Tusker) &rarr; Ancestor Seat &rarr; Chloe (Martini) &rarr; David (Scotch) &rarr; Grace (Sherry)
         </li>
       </ul>
 
@@ -243,20 +208,17 @@
 
     <div class="staging-box">
 
-      <h4 class="warning-text">SEATING DISRUPTION</h4>
+      <h4 class="warning-text">SEATING CHAOS METRIC</h4>
 
       <p>
-        Ten minutes before dinner, Brian Kamau intentionally sat in Victor’s seat
-        as a joke.
+        Ten minutes before dinner, Brian arrived late and sat in Victor&rsquo;s chair as a joke. 
+        Following a volatile argument between the brothers, Edward interceded: 
+        <em>&ldquo;Let him sit! Victor, come sit by the ancestors while I bless them all.&rdquo;</em>
       </p>
 
       <p>
-        Edward instructed Victor to temporarily move to the ancestral chair
-        during the blessing ritual.
-      </p>
-
-      <p>
-        Victor’s dawa remained untouched at the original setting.
+        Victor moved to the foot of the table for the ritual duration. His dawa glass, 
+        already poured, remained stationary at his original place setting. Victor never touched the glass during dinner.
       </p>
 
     </div>
@@ -269,22 +231,22 @@
 
         <p class="log-item recovered">
           <strong>CAUSE OF DEATH:</strong>
-          Acute poisoning from lethal mũthaiga alkaloid
+          Lethal extract of mũthaiga (Kenyan monkshood).
         </p>
 
         <p class="log-item recovered">
-          <strong>POISON LOCATION:</strong>
-          Present only in Victor’s dawa glass
+          <strong>POISON CONTAINER:</strong>
+          Alkaloid present exclusively inside the dawa glass. All other glasses clean.
         </p>
 
         <p class="log-item recovered">
-          <strong>SYMPTOMS:</strong>
-          Burning throat, convulsions, respiratory collapse
+          <strong>SYMPTOMS PROFILE:</strong>
+          Burning throat, immediate severe convulsions, rapid respiratory failure.
         </p>
 
         <p class="log-item recovered">
-          <strong>TIME TO DEATH:</strong>
-          Approximately three minutes after ingestion
+          <strong>TIME FRAME:</strong>
+          Fatal termination achieved within 3 minutes of consumption.
         </p>
 
       </div>
@@ -304,176 +266,168 @@
 
       <div class="clue-card">
 
-        <span class="clue-label">THE DAWA GLASS</span>
+        <span class="clue-label">THE DAWA GLASS &ndash; RESIDUE</span>
 
         <p>
-          Residue analysis confirms vodka, lime,
-          excessive wild honey, sugar,
-          and lethal mũthaiga poison.
+          Contains remnants of vodka, lime, excessive wild honey, and sugar mixed with a lethal concentration of mũthaiga.
         </p>
 
         <div class="mini-document">
-          Sugared rim appeared smudged and uneven,
-          as though reapplied in haste.
+          <strong>Forensic Note:</strong> The sugared rim is visibly smudged and uneven, indicating it was reapplied in a hurry.
         </div>
 
       </div>
 
       <div class="clue-card">
 
-        <span class="clue-label">HONEY STAIN</span>
+        <span class="clue-label">HONEY STAIN ON TABLECLOTH</span>
 
         <p>
-          Sticky honey residue discovered on the tablecloth near Victor’s
-          original chair.
+          A small, sticky deposit of honey was discovered on the tablecloth to the immediate right of Victor&rsquo;s original place setting.
         </p>
 
         <div class="mini-document">
-          Investigators observed a trail of ants forming beside the stain.
+          A fresh trail of ants had begun forming around the sticky perimeter.
         </div>
 
       </div>
 
       <div class="clue-card">
 
-        <span class="clue-label">EDWARD’S EMAIL</span>
+        <span class="clue-label">EDWARD&rsquo;S PHONE (DRAFT EMAIL)</span>
 
         <p>
-          Draft email addressed to lawyer Gideon Muthoka recovered from phone.
+          Draft captured at 4:17 PM addressed to family lawyer Gideon Muthoka:
         </p>
 
         <div class="mini-document note-box">
-          “The signed amendment naming David as sole successor is in my safe...”
+          &ldquo;Gideon, the signed amendment naming David as sole successor is in my safe. Tonight I will still give Victor one final, formal chance to explain the merger forgery... After dinner, we execute the new will. &mdash;Edward.&rdquo;
         </div>
 
       </div>
 
       <div class="clue-card">
 
-        <span class="clue-label">FAMILY BIBLE NOTE</span>
+        <span class="clue-label highlight-label">THE GOLD CREST CUFFLINK</span>
 
         <p>
-          Handwritten Kikuyu proverb highlighted in fresh ink.
+          A single cufflink engraved with the Kamau family crest (a coffee branch and spear) was found wedged under the tablecloth edge near the floor by Victor&rsquo;s original chair.
+        </p>
+
+        <div class="mini-document">
+          <strong>Status Check:</strong> Victor is missing a cufflink from his left sleeve. David&rsquo;s left sleeve is also missing its matching gold crest cufflink.
+        </div>
+
+      </div>
+
+      <div class="clue-card">
+
+        <span class="clue-label">BRIAN'S SILK SHIRT METRIC</span>
+
+        <p>
+          Brian wore a custom silk shirt requiring cufflinks to the dinner event.
+        </p>
+
+        <div class="mini-document">
+          <strong>Status Check:</strong> Brian's right sleeve is missing its custom silver horn cufflink. He claims he accidentally left it behind in Lamu.
+        </div>
+
+      </div>
+
+      <div class="clue-card">
+
+        <span class="clue-label">LISA&rsquo;S VISUAL WITNESS REPORT</span>
+
+        <p>
+          Lisa claims she passed by the kitchen entryway shortly before dinner was served.
         </p>
 
         <div class="mini-document note-box">
-          “Kĩrĩra kĩa mũcingiri gĩtirĩ kĩenyũ.”<br><br>
-
-          “The cry of the poisoner has no echo.”
+          &ldquo;I saw a man&rsquo;s back, a sleeve, adding something from a tiny bottle to a glass. I only saw the glint of one gold cufflink. I didn&rsquo;t see which glass. I assumed it was the bartender.&rdquo;
         </div>
 
       </div>
 
       <div class="clue-card">
 
-        <span class="clue-label">SECURITY LOG</span>
+        <span class="clue-label">SECURITY CAMERA LOGS</span>
 
         <p>
-          Dining room camera disabled at 6:00 PM.
+          The dining room camera line was completely cut off at 6:00 PM &ldquo;on Mzee&rsquo;s instructions&rdquo;.
         </p>
 
         <div class="mini-document">
-          Hallway camera confirms nobody exited
-          before Edward collapsed.
+          The exterior hallway camera remained active, showing all suspects entering between 6:30 and 6:45 PM. No escapees recorded.
         </div>
 
       </div>
 
       <div class="clue-card">
 
-        <span class="clue-label">EMPTY VIAL</span>
+        <span class="clue-label">DISCARDED EMPTY VIAL</span>
 
         <p>
-          Small wiped vial recovered from kitchen bin.
+          Recovered by David from the kitchen trash bin. Wiped completely clean of fingerprints.
         </p>
 
         <div class="mini-document">
-          Interior smelled faintly of wild honey and herbal liquorice.
+          Chemical assay smells faintly of wild honey paired with a subtle, liquorice-like herbal scent.
         </div>
 
       </div>
 
       <div class="clue-card">
 
-        <span class="clue-label">GOLD CUFFLINK</span>
+        <span class="clue-label">VICTOR&rsquo;S TORN NOTE</span>
 
         <p>
-          Single Kamau family crest cufflink recovered beneath tablecloth.
-        </p>
-
-        <div class="mini-document">
-          Identical ceremonial cufflinks are owned by multiple family members.
-        </div>
-
-      </div>
-
-      <div class="clue-card">
-
-        <span class="clue-label">VICTOR’S NOTE</span>
-
-        <p>
-          Torn handwritten fragment recovered from study waste bin.
+          Scraps recovered from the study waste bin. Fragment matches Victor's handwriting profile.
         </p>
 
         <div class="mini-document note-box">
-          “…tonight must be his last decision…”
+          &ldquo;&hellip;tonight must be his last decision&hellip;&rdquo; <br>(Remainder of note shredded beyond field recovery).
         </div>
 
       </div>
 
       <div class="clue-card">
 
-        <span class="clue-label">GRACE’S SYRUP</span>
+        <span class="clue-label">GRACE&rsquo;S SYRUP JAR</span>
 
         <p>
-          Jar of thick honey-like liquid discovered inside handbag.
+          Small bottle extracted from Grace's handbag during scene processing containing thick liquid.
         </p>
 
         <div class="mini-document">
-          Lab confirmed valerian-root sedative —
-          not poison.
+          Lab tracking confirms a harmless valerian-root sedative mixture, not monkshood. She admits to frequently mixing it into Edward's evening tea.
         </div>
 
       </div>
 
       <div class="clue-card">
 
-        <span class="clue-label">LISA’S SEARCH HISTORY</span>
+        <span class="clue-label">LISA&rsquo;S SEARCH LOGS</span>
 
         <p>
-          Browser search found on Lisa’s phone.
+          Data extraction from personal mobile unit reveals a browser log dated two days prior.
         </p>
 
         <div class="mini-document note-box">
-          “Can monkshood be masked by honey?”
+          Query string: <em>&ldquo;Can monkshood be masked by honey?&rdquo;</em> <br>Subject asserts it was background research for a manuscript.
         </div>
 
       </div>
 
       <div class="clue-card">
 
-        <span class="clue-label">BRIAN’S RECEIPT</span>
+        <span class="clue-label">BRIAN&rsquo;S HERBALIST RECEIPT</span>
 
         <p>
-          Gikomba herbalist receipt for “mũthaiga root.”
+          Crumpled paper invoice from Gikomba market dated four days prior.
         </p>
 
         <div class="mini-document">
-          Dated four days before the dinner.
-        </div>
-
-      </div>
-
-      <div class="clue-card">
-
-        <span class="clue-label">HOUSEKEEPER STATEMENT</span>
-
-        <p>
-          Chloe overheard arguing with Edward before dinner.
-        </p>
-
-        <div class="mini-document note-box">
-          “I wish you would just disappear for once!”
+          Line item specifies payment for &ldquo;mũthaiga root.&rdquo; A container of boiled herbal paste found in his room was verified as an unpoisoned joint poultice.
         </div>
 
       </div>
@@ -515,22 +469,16 @@
   <div class="action-footer">
 
     <p class="briefing-note">
-      Six suspects. One poisoned glass. One inheritance war.
+      Six family members. Multiple missing cuffs. One lethal dose. Deduce the anomalies.
     </p>
 
     <div class="btn-group">
 
-      <a
-        href="/games/kamau-succession/suspects"
-        class="nav-btn primary"
-      >
+      <a href="/games/kamau-succession/suspects" class="nav-btn primary">
         PROCEED TO SUSPECTS 🕵️
       </a>
 
-      <a
-        href="/games/kamau-succession/evidence"
-        class="nav-btn secondary"
-      >
+      <a href="/games/kamau-succession/evidence" class="nav-btn secondary">
         VIEW EVIDENCE 🧪
       </a>
 
@@ -549,7 +497,7 @@
   --glass: rgba(255,255,255,0.7);
 }
 
-/* MAIN */
+/* MAIN CONTAINER */
 .incident-container {
   max-width: 1050px;
   margin: 40px auto;
@@ -563,7 +511,7 @@
   box-shadow: 0 10px 40px rgba(0,0,0,0.25);
 }
 
-/* NAV */
+/* NAVIGATION LINKS */
 .case-navigation {
   display: flex;
   flex-wrap: wrap;
@@ -596,7 +544,7 @@
   border-color: var(--accent);
 }
 
-/* BACKGROUND */
+/* BACKGROUND ACCENTS */
 .paper-texture {
   position: absolute;
   inset: 0;
@@ -621,7 +569,7 @@
   pointer-events: none;
 }
 
-/* HEADER */
+/* CASE DOSSIER HEADER */
 .dossier-header {
   text-align: center;
   margin-bottom: 60px;
@@ -662,7 +610,7 @@ h1 {
   margin-top: 25px;
 }
 
-/* SECTIONS */
+/* REPORT DOSSIER SECTIONS */
 .dossier-section {
   background: var(--glass);
   border: 1px solid rgba(0,0,0,0.1);
@@ -688,7 +636,7 @@ h3 {
   text-transform: uppercase;
 }
 
-/* LISTS */
+/* NESTED CONTENT LISTS */
 ul {
   list-style: none;
   padding: 0;
@@ -706,7 +654,7 @@ ul li::before {
   left: 0;
 }
 
-/* BOXES */
+/* CONTENT STAGING BOXES */
 .staging-box {
   border-left: 6px solid var(--accent);
   background: white;
@@ -717,6 +665,12 @@ ul li::before {
 .warning-text {
   color: var(--accent);
   margin-bottom: 10px;
+}
+
+.inventory h4 {
+  margin-top: 25px;
+  text-transform: uppercase;
+  color: var(--ink);
 }
 
 .log-grid {
@@ -734,7 +688,7 @@ ul li::before {
   border-left: 4px solid #4caf50;
 }
 
-/* DETECTIVE NOTE */
+/* DETECTIVE NOTES BOX */
 .detective-note {
   margin-top: 30px;
   padding: 20px;
@@ -742,7 +696,7 @@ ul li::before {
   border: 1px dashed #999;
 }
 
-/* CLUES */
+/* EVIDENCE CLUE CARDS LAYER */
 .clue-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -763,6 +717,10 @@ ul li::before {
   margin-bottom: 10px;
 }
 
+.highlight-label {
+  font-weight: bold;
+}
+
 .mini-document {
   margin-top: 15px;
   padding: 15px;
@@ -776,7 +734,7 @@ ul li::before {
   font-style: italic;
 }
 
-/* TIMELINE */
+/* TIMELINE RENDERING SYSTEM */
 .timeline {
   display: flex;
   flex-direction: column;
@@ -808,7 +766,7 @@ ul li::before {
   border: 1px solid #ddd;
 }
 
-/* FOOTER */
+/* DOSSIER LOWER FOOTER SYSTEM */
 .action-footer {
   text-align: center;
   margin-top: 70px;
@@ -852,7 +810,7 @@ ul li::before {
   transform: translateY(-2px);
 }
 
-/* MOBILE */
+/* RESPONSIVE QUERY SYSTEM */
 @media (max-width: 700px) {
   .incident-container {
     padding: 40px 20px;
