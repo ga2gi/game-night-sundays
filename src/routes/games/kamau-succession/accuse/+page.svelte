@@ -45,7 +45,7 @@
   let isCorrect = $state(false);
 
   const KILLER_ID = 'victor';
-  const SOLUTION_CODE = 'KSD-1212';
+  const SOLUTION_CODE = '1212';
 
   function handleAccuse() {
     if (!selectedSuspect) return;
