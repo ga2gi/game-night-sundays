@@ -10,9 +10,7 @@
       description:
         "Recovered 3ft from the victim's body. Left-hand running glove, monogrammed 'M.K.'. Positioned close to the torso in a way that suggests deliberate placement rather than random loss during movement.",
       forensics:
-        "Blood matches Susan Amani. Trace chemical analysis detected a light cleaning solvent inconsistent with known household products associated with Michael Korir. No usable fingerprints recovered. Fibre traces indicate the glove was handled after initial contamination.",
-      contradiction:
-        "If this item was previously reported lost, how did it resurface at the scene in a condition suggesting recent handling—and what explains the attempt to clean or alter its surface?"
+        "Blood matches Susan Amani. Trace chemical analysis detected a light cleaning solvent inconsistent with known household products associated with Michael Korir. No usable fingerprints recovered. Fibre traces indicate the glove was handled after initial contamination."
     },
     {
       id: "tire",
@@ -24,9 +22,7 @@
       description:
         "Recovered from soft mud near the east trail service entrance. The pattern indicates controlled vehicle movement rather than erratic motion.",
       forensics:
-        "Consistent with a Mercedes E-Class. Wear pattern and tread alignment match diplomatic fleet specifications. Depth variations suggest the vehicle paused briefly before repositioning.",
-      contradiction:
-        "A diplomatic vehicle is not officially recorded in this area during the time window. However, ignition logs and surveillance gaps create an unresolved overlap in timelines."
+        "Consistent with a Mercedes E-Class. Wear pattern and tread alignment match diplomatic fleet specifications. Depth variations suggest the vehicle paused briefly before repositioning."
     },
     {
       id: "note",
@@ -36,11 +32,9 @@
       icon: "📝",
       color: "#f1fa8c",
       description:
-        "Recovered beneath a white gardenia placed on the victim’s chest. The paper is clean, dry, and shows no signs of environmental exposure.",
+        "Recovered beneath a white gardenia placed on the victim's chest. The paper is clean, dry, and shows no signs of environmental exposure.",
       forensics:
-        "Handwritten phrase: 'No encore for the runner.' Forensic handwriting analysis suggests intentional disguise of natural writing style. No identifiable fingerprints or biological residue were recovered.",
-      contradiction:
-        "The phrase appears in a private research context not publicly accessible. Whether this indicates authorship or replication remains unclear."
+        "Handwritten phrase: 'No encore for the runner.' Forensic handwriting analysis suggests intentional disguise of natural writing style. No identifiable fingerprints or biological residue were recovered."
     },
     {
       id: "botany",
@@ -50,11 +44,9 @@
       icon: "🔬",
       color: "#50fa7b",
       description:
-        "Microscopic pollen traces recovered from the victim’s clothing, concentrated around upper fabric layers.",
+        "Microscopic pollen traces recovered from the victim's clothing, concentrated around upper fabric layers.",
       forensics:
-        "Matches a rare cultivated gardenia strain distributed through a limited supply chain involving three known sources within Kiambu County: diplomatic grounds, a city conservation facility, and a private residential garden.",
-      contradiction:
-        "The floral trace connects multiple controlled environments, but does not indicate direct origin of contact—only proximity within an unspecified timeframe."
+        "Matches a rare cultivated gardenia strain distributed through a limited supply chain involving three known sources within Kiambu County: diplomatic grounds, a city conservation facility, and a private residential garden."
     }
   ];
 </script>
@@ -140,10 +132,6 @@
                 {item.forensics}
               </p>
             </div>
-
-            <p class="red-pen">
-              {item.contradiction}
-            </p>
           </div>
         </div>
       </div>
