@@ -27,6 +27,18 @@
       category: 'premium'
     },
     {
+      id: 'echoes-in-the-tower',
+      title: 'ECHOES IN THE TOWER',
+      price: 'KES 250',
+      difficulty: 'Advanced',
+      tagline: 'CASE: RRP-2026-088',
+      description:
+        'Investigative journalist Salim Juma is found dead in a soundproofed War Room during a Blackout Masquerade. Cyanide poisoning, seven suspects, and a system clock drift that makes time itself a suspect.',
+      image:
+        'https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=2070&auto=format&fit=crop',
+      category: 'premium'
+    },
+    {
       id: 'kamau-succession',
       title: 'THE KAMAU SUCCESSION',
       price: 'KES 250',
@@ -35,7 +47,7 @@
       description:
         'A billionaire collapses during a family dinner. With the will missing, you must navigate a web of inheritance, betrayal, and hidden fractures beneath a polished public image.',
       image:
-        'https://images.unsplash.com/photo-1514333130115-342379344843?q=80&w=2070&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop',
       category: 'premium'
     },
     {
@@ -123,7 +135,7 @@
 
       <p class="hero-lead" in:fly={{ y: 20, delay: 500 }}>
         Analyze evidence. Cross-reference alibis. Solve immersive criminal
-        investigations inspired by Kenya’s darkest fictional mysteries.
+        investigations inspired by Kenya's darkest fictional mysteries.
       </p>
 
       <div class="cta-group" in:fly={{ y: 20, delay: 700 }}>
@@ -158,8 +170,8 @@
           <div class="ticker">
             <span>[UPDATE] New forensic evidence decrypted.</span>
             <span>[SECURE] 256-bit archive encryption active.</span>
-            <span>[ARCHIVE] The Penthouse Silence now public.</span>
-            <span>[ALERT] Suspect activity detected in River Road.</span>
+            <span>[ARCHIVE] Echoes in the Tower now available.</span>
+            <span>[ALERT] Suspect activity detected in Kilimani Arts Tower.</span>
             <span>[SYSTEM] Case database synchronized.</span>
             <span>[UPDATE] New forensic evidence decrypted.</span>
             <span>[SECURE] 256-bit archive encryption active.</span>
@@ -546,5 +558,3 @@
     .btn-main, .pricing-mini { width: 100%; max-width: 320px; text-align: center; }
   }
 </style>
-
-```

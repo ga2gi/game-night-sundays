@@ -16,6 +16,19 @@
       isFree: false
     },
     {
+      id: 'echoes-in-the-tower',
+      title: 'ECHOES IN THE TOWER',
+      difficulty: 'Advanced',
+      tagline: 'CASE: RRP-2026-088',
+      description:
+        'Investigative journalist Salim Juma is found dead in a soundproofed War Room during a Blackout Masquerade. Cyanide poisoning, seven suspects, and a system clock drift that makes time itself a suspect.',
+      image:
+        'https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=2070&auto=format&fit=crop',
+      location: 'Kilimani Arts Tower',
+      price: 'KSH. 250/-',
+      isFree: false
+    },
+    {
       id: 'kamau-succession',
       title: 'THE KAMAU SUCCESSION',
       difficulty: 'Intermediate',
@@ -23,7 +36,7 @@
       description:
         'A billionaire collapses during a family dinner. With the will missing, you must navigate a web of inheritance, betrayal, and hidden fractures beneath a polished public image.',
       image:
-        'https://images.unsplash.com/photo-1514333130115-342379344843?q=80&w=2070&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop',
       location: 'Kiambu',
       price: 'KSH. 250/-',
       isFree: false
@@ -63,6 +76,7 @@
 
   const codes = {
     'gardenia-slayings': 'GARDENIA',
+    'echoes-in-the-tower': 'TOWER088',
     'kamau-succession': 'SUCCESSION77',
     'coffee-house-murder': 'COMMUNITYKE',
     'naomi-mwangi': 'MYSTERYFAM'
