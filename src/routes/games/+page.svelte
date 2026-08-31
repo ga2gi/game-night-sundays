@@ -12,8 +12,7 @@
       image:
         'https://images.unsplash.com/photo-1505664194779-8beaceb93744?q=80&w=2070&auto=format&fit=crop',
       location: 'Nairobi',
-      price: 'KSH. 250/-',
-      isFree: false
+      price: 'KSH. 500/-'
     },
     {
       id: 'echoes-in-the-tower',
@@ -25,8 +24,7 @@
       image:
         'https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=2070&auto=format&fit=crop',
       location: 'Kilimani Arts Tower',
-      price: 'KSH. 250/-',
-      isFree: false
+      price: 'KSH. 500/-'
     },
     {
       id: 'kamau-succession',
@@ -38,34 +36,7 @@
       image:
         'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop',
       location: 'Kiambu',
-      price: 'KSH. 250/-',
-      isFree: false
-    },
-    {
-      id: 'coffee-house-murder',
-      title: 'THE COFFEE HOUSE MURDER',
-      difficulty: 'Beginner',
-      tagline: 'CASE: CHM-2025-004',
-      description:
-        'A locked-room mystery where a barista is found dead in a sealed roasting room. An entry-level case focused on contradiction detection and logical elimination among staff.',
-      image:
-        'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=2070&auto=format&fit=crop',
-      location: 'Nairobi',
-      price: 'FREE',
-      isFree: true
-    },
-    {
-      id: 'naomi-mwangi',
-      title: 'NAOMI MWANGIS MURDER',
-      difficulty: 'Intermediate',
-      tagline: 'CASE: NMM-2025-009',
-      description:
-        'Law student Naomi Mwangi is found dead in her locked Riverside penthouse. No forced entry, four suspects, and a web of overlapping emotional motives and physical evidence.',
-      image:
-        'https://images.unsplash.com/photo-1478720568477-152d9b164e26?q=80&w=2070&auto=format&fit=crop',
-      location: 'Riverside',
-      price: 'FREE',
-      isFree: true
+      price: 'KSH. 500/-'
     }
   ];
 
@@ -77,14 +48,14 @@
   const codes = {
     'gardenia-slayings': 'GARDENIA',
     'echoes-in-the-tower': 'TOWER088',
-    'kamau-succession': 'SUCCESSION77',
-    'coffee-house-murder': 'COMMUNITYKE',
-    'naomi-mwangi': 'MYSTERYFAM'
+    'kamau-succession': 'SUCCESSION77'
   };
 
   function unlock(id) {
     if (inputCode.toUpperCase() === codes[id]) {
-      if (!unlocked.includes(id)) unlocked.push(id);
+      if (!unlocked.includes(id)) {
+        unlocked = [...unlocked, id];
+      }
       activeId = null;
       inputCode = '';
     } else {
@@ -92,6 +63,21 @@
       inputCode = '';
     }
   }
+
+  function setActive(id) {
+    activeId = id;
+  }
+
+  function closeGate() {
+    activeId = null;
+    inputCode = '';
+  }
+
+  let filteredGames = $derived(
+    games.filter(g =>
+      g.title.toLowerCase().includes(search.toLowerCase())
+    )
+  );
 </script>
 
 <svelte:head>
@@ -113,24 +99,29 @@
     <div class="steps-grid">
       <div class="step-card">
         <div class="step-num">01</div>
-        <h3>PAID CASE ACCESS</h3>
+        <h3>PURCHASE ACCESS</h3>
         <p>
           Purchase an access invite on 
           <a class="hustlesasa-link" href="https://murdermysterygameske.hustlesasa.shop/" target="_blank" rel="noopener noreferrer">
-            HustleSasa (KSH. 250/-)
+            HustleSasa (KSH. 500/-)
           </a> 
-          to receive your unique physical or digital decryption credential.
+          to receive your digital decryption credential.
         </p>
       </div>
       <div class="step-card">
         <div class="step-num">02</div>
-        <h3>FREE COMMUNITY GAMES</h3>
-        <p>Decryption keys for free investigative cases are distributed directly within our official Community WhatsApp Group.</p>
+        <h3>EMAIL DELIVERY</h3>
+        <p>Your decryption key will be delivered via email only. No physical delivery available.</p>
       </div>
       <div class="step-card">
         <div class="step-num">03</div>
         <h3>DECRYPT & EXPLORE</h3>
         <p>Select your targeted file below, enter your received access code into the secure gate, and unlock the interactive network.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">04</div>
+        <h3>LICENSING & USAGE</h3>
+        <p>Can play with friends for personal use. No commercial use allowed. Contact us for permission regarding any other usage.</p>
       </div>
     </div>
   </section>
@@ -147,11 +138,9 @@
 
   <div class="grid">
 
-    {#each games.filter(g =>
-      g.title.toLowerCase().includes(search.toLowerCase())
-    ) as game}
+    {#each filteredGames as game (game.id)}
 
-      <div class="card" in:fly>
+      <div class="card" in:fly={{ y: 20, duration: 300 }}>
         <div class="img-wrapper">
           <img src={game.image} alt={game.title} />
           <div class="case-badge">{game.tagline}</div>
@@ -164,7 +153,7 @@
           <div class="meta">
             <span class="tag-difficulty">INTEL: {game.difficulty}</span>
             <span class="tag-location">SECTOR: {game.location}</span>
-            <span class="tag-price" class:free-highlight={game.isFree}>{game.price}</span>
+            <span class="tag-price">{game.price}</span>
           </div>
 
           {#if unlocked.includes(game.id)}
@@ -175,13 +164,16 @@
 
           {:else if activeId === game.id}
 
-            <div class="gate" in:slide>
+            <div class="gate" in:slide={{ duration: 200 }}>
 
               <input
                 placeholder="ENTER DECRYPT CODE"
                 bind:value={inputCode}
-                onkeydown={(e) =>
-                  e.key === 'Enter' && unlock(game.id)}
+                onkeydown={(e) => {
+                  if (e.key === 'Enter') {
+                    unlock(game.id);
+                  }
+                }}
               />
 
               <div class="gate-actions">
@@ -189,7 +181,7 @@
                   EXECUTE DECRYPTION
                 </button>
 
-                <button class="btn-close" onclick={() => (activeId = null)}>
+                <button class="btn-close" onclick={closeGate}>
                   ABORT
                 </button>
               </div>
@@ -198,7 +190,7 @@
 
           {:else}
 
-            <button class="locked" onclick={() => (activeId = game.id)}>
+            <button class="locked" onclick={() => setActive(game.id)}>
               <span class="lock-icon">🔒</span> SECURE DATA — DECRYPT REQUIRED
             </button>
 
@@ -213,6 +205,12 @@
 </main>
 
 <style>
+  :global(body) {
+    margin: 0;
+    background: #050505;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
   .container {
     max-width: 1350px;
     margin: 0 auto;
@@ -220,7 +218,6 @@
     color: #f1f1f1;
     min-height: 100vh;
     padding: 60px 2rem;
-    font-family: 'JetBrains Mono', monospace;
   }
 
   /* HEADER */
@@ -285,7 +282,7 @@
 
   .steps-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
   }
 
@@ -350,7 +347,6 @@
     background: #09090b;
     border: 1px solid rgba(255, 255, 255, 0.06);
     color: white;
-    font-family: 'JetBrains Mono', monospace;
     font-size: 0.8rem;
     letter-spacing: 1.5px;
     transition: all 0.3s ease;
@@ -468,10 +464,6 @@
     font-weight: 700;
   }
 
-  .tag-price.free-highlight {
-    color: #1f5c35;
-  }
-
   /* ACTIONS & BUTTONS */
   .locked {
     width: 100%;
@@ -479,7 +471,6 @@
     border: 1px solid #262626;
     background: linear-gradient(to bottom, #121214, #09090b);
     color: #a1a1aa;
-    font-family: 'JetBrains Mono', monospace;
     font-size: 0.68rem;
     letter-spacing: 1.5px;
     font-weight: 700;
@@ -538,10 +529,10 @@
     background: #050507;
     border: 1px solid #26262b;
     color: white;
-    font-family: 'JetBrains Mono', monospace;
     font-size: 0.75rem;
     letter-spacing: 1px;
     text-align: center;
+    box-sizing: border-box;
   }
 
   .gate input:focus {
@@ -560,7 +551,6 @@
     background: #b02a2a;
     border: 1px solid #cd3737;
     color: white;
-    font-family: 'JetBrains Mono', monospace;
     font-size: 0.65rem;
     font-weight: 700;
     letter-spacing: 1px;
@@ -578,7 +568,6 @@
     background: transparent;
     border: 1px solid #26262b;
     color: #71717a;
-    font-family: 'JetBrains Mono', monospace;
     font-size: 0.65rem;
     letter-spacing: 1px;
     cursor: pointer;
@@ -605,6 +594,10 @@
     }
     
     .grid {
+      grid-template-columns: 1fr;
+    }
+
+    .steps-grid {
       grid-template-columns: 1fr;
     }
   }

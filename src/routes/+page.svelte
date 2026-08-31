@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { fade, fly } from 'svelte/transition';
+  import { fade, fly, slide } from 'svelte/transition';
   import { onMount, onDestroy } from 'svelte';
 
   type Game = {
@@ -10,74 +10,59 @@
     tagline: string;
     description: string;
     image: string;
-    category: 'premium' | 'free';
+    code: string;
+    featured?: boolean;
   };
 
   const games: Game[] = [
     {
       id: 'gardenia-slayings',
       title: 'THE GARDENIA SLAYINGS',
-      price: 'KES 250',
+      price: 'KSH.500/-',
       difficulty: 'Advanced',
       tagline: 'CASE: RRP-2026-088',
       description:
         'A researcher is found in River Road Park, the scene meticulously staged to mirror an unsolved 1969 cold case. Solve a high-complexity psychological puzzle involving historical reenactment.',
       image:
         'https://images.unsplash.com/photo-1505664194779-8beaceb93744?q=80&w=2070&auto=format&fit=crop',
-      category: 'premium'
+      code: 'GARDENIA',
+      featured: true
     },
     {
       id: 'echoes-in-the-tower',
       title: 'ECHOES IN THE TOWER',
-      price: 'KES 250',
+      price: 'KSH.500/-',
       difficulty: 'Advanced',
       tagline: 'CASE: RRP-2026-088',
       description:
         'Investigative journalist Salim Juma is found dead in a soundproofed War Room during a Blackout Masquerade. Cyanide poisoning, seven suspects, and a system clock drift that makes time itself a suspect.',
       image:
         'https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=2070&auto=format&fit=crop',
-      category: 'premium'
+      code: 'TOWER088',
+      featured: true
     },
     {
       id: 'kamau-succession',
       title: 'THE KAMAU SUCCESSION',
-      price: 'KES 250',
+      price: 'KSH.500/-',
       difficulty: 'Intermediate',
       tagline: 'CASE: KSD-2026-012',
       description:
         'A billionaire collapses during a family dinner. With the will missing, you must navigate a web of inheritance, betrayal, and hidden fractures beneath a polished public image.',
       image:
         'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop',
-      category: 'premium'
-    },
-    {
-      id: 'coffee-house-murder',
-      title: 'THE COFFEE HOUSE MURDER',
-      price: 'FREE',
-      difficulty: 'Beginner',
-      tagline: 'CASE: CHM-2025-004',
-      description:
-        'A locked-room mystery where a barista is found dead in a sealed roasting room. An entry-level case focused on contradiction detection and logical elimination among staff.',
-      image:
-        'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=2070&auto=format&fit=crop',
-      category: 'free'
-    },
-    {
-      id: 'naomi-mwangi',
-      title: 'NAOMI MWANGIS MURDER',
-      price: 'FREE',
-      difficulty: 'Intermediate',
-      tagline: 'CASE: NMM-2025-009',
-      description:
-        'Law student Naomi Mwangi is found dead in her locked Riverside penthouse. No forced entry, four suspects, and a web of overlapping emotional motives and physical evidence.',
-      image:
-        'https://images.unsplash.com/photo-1478720568477-152d9b164e26?q=80&w=2070&auto=format&fit=crop',
-      category: 'free'
+      code: 'SUCCESSION77',
+      featured: true
     }
   ];
 
-  let activeTab = $state<'all' | 'premium' | 'free'>('all');
   let systemTime = $state('');
+  let unlockedGames = $state<string[]>([]);
+  let activeUnlockId = $state<string | null>(null);
+  let unlockCode = $state('');
+  let errorMessage = $state('');
+
+  const featuredGames = $derived(games.filter(g => g.featured));
 
   function updateClock() {
     systemTime = new Date().toLocaleTimeString('en-GB', {
@@ -98,14 +83,33 @@
     clearInterval(interval);
   });
 
-  const filteredGames = $derived(
-    activeTab === 'all'
-      ? games
-      : games.filter((game) => game.category === activeTab)
-  );
+  function handleUnlock(gameId: string) {
+    const game = games.find(g => g.id === gameId);
+    if (!game) return;
 
-  function setTab(tab: 'all' | 'premium' | 'free') {
-    activeTab = tab;
+    if (unlockCode.toUpperCase() === game.code) {
+      if (!unlockedGames.includes(gameId)) {
+        unlockedGames = [...unlockedGames, gameId];
+      }
+      activeUnlockId = null;
+      unlockCode = '';
+      errorMessage = '';
+    } else {
+      errorMessage = 'ACCESS DENIED: INVALID DECRYPTION CODE';
+      unlockCode = '';
+    }
+  }
+
+  function openUnlock(gameId: string) {
+    activeUnlockId = gameId;
+    unlockCode = '';
+    errorMessage = '';
+  }
+
+  function closeUnlock() {
+    activeUnlockId = null;
+    unlockCode = '';
+    errorMessage = '';
   }
 </script>
 
@@ -139,7 +143,7 @@
       </p>
 
       <div class="cta-group" in:fly={{ y: 20, delay: 700 }}>
-        <a href="/games" class="btn-main"> ACCESS CASE FILES </a>
+        <a href="#featured" class="btn-main"> ACCESS CASE FILES </a>
 
         <a
           href="https://murdermysterygameske.hustlesasa.shop/"
@@ -148,16 +152,58 @@
         >
           SHOP CASES
         </a>
+      </div>
+    </div>
+  </section>
 
-        <!-- WHATSAPP COMMUNITY LINK -->
-        <a
-          href="https://chat.whatsapp.com/LDB3Fdc2nfh8RhFaRt5fSj"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn-main secondary whatsapp-btn"
-        >
-          JOIN COMMUNITY
-        </a>
+  <!-- HOW TO PLAY SECTION -->
+  <section class="how-to-play">
+    <div class="container">
+      <div class="how-to-header">
+        <p class="section-label">OPERATIONAL BRIEFING</p>
+        <h2>HOW TO PLAY</h2>
+        <div class="header-line"></div>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card" in:fly={{ y: 20, delay: 100 }}>
+          <div class="step-number">01</div>
+          <h3>PURCHASE CASE FILE</h3>
+          <p>
+            Visit our 
+            <a href="https://murdermysterygameske.hustlesasa.shop/" target="_blank" rel="noopener noreferrer" class="inline-link">
+              HustleSasa Shop
+            </a> 
+            and select your desired case file for KSH.500/-.
+          </p>
+        </div>
+
+        <div class="step-card" in:fly={{ y: 20, delay: 200 }}>
+          <div class="step-number">02</div>
+          <h3>EMAIL DELIVERY</h3>
+          <p>
+            Your decryption credentials and case access codes will be delivered 
+            directly to your email address. No physical delivery available.
+          </p>
+        </div>
+
+        <div class="step-card" in:fly={{ y: 20, delay: 300 }}>
+          <div class="step-number">03</div>
+          <h3>DECRYPT & INVESTIGATE</h3>
+          <p>
+            Click on your case file below, enter the access code from your email, 
+            and begin your investigation immediately.
+          </p>
+        </div>
+
+        <div class="step-card" in:fly={{ y: 20, delay: 400 }}>
+          <div class="step-number">04</div>
+          <h3>LICENSING & USAGE</h3>
+          <p>
+            Can play with friends for personal use. No commercial use allowed. 
+            Contact us for permission regarding any other usage.
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -175,39 +221,28 @@
             <span>[SYSTEM] Case database synchronized.</span>
             <span>[UPDATE] New forensic evidence decrypted.</span>
             <span>[SECURE] 256-bit archive encryption active.</span>
-            <span>[ARCHIVE] Coffee House Murder now public.</span>
+            <span>[ARCHIVE] Gardenia Slayings now available.</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <main class="container" id="directory">
+  <!-- FEATURED FILES -->
+  <main class="container" id="featured">
     <div class="section-heading">
       <div>
         <p class="section-label">ARCHIVE DIRECTORY</p>
-        <h2>LATEST FILES</h2>
+        <h2>FEATURED FILES</h2>
       </div>
-
-      <nav class="library-nav" role="tablist">
-        <button class:active={activeTab === 'all'} onclick={() => setTab('all')}>
-          ALL
-        </button>
-        <button class:active={activeTab === 'premium'} onclick={() => setTab('premium')}>
-          CLASSIFIED
-        </button>
-        <button class:active={activeTab === 'free'} onclick={() => setTab('free')}>
-          PUBLIC
-        </button>
-      </nav>
     </div>
 
     <div class="game-grid">
-      {#each filteredGames as game (game.id)}
+      {#each featuredGames as game (game.id)}
         <div class="game-card" in:fade={{ duration: 350 }}>
           <figure class="card-image">
             <img src={game.image} alt={game.title} loading="lazy" />
-            <div class="price-tag" class:is-free={game.price === 'FREE'}>
+            <div class="price-tag">
               {game.price}
             </div>
           </figure>
@@ -219,17 +254,69 @@
             </div>
             <h3>{game.title}</h3>
             <p class="description">{game.description}</p>
+
+            {#if unlockedGames.includes(game.id)}
+              <a href={`/games/${game.id}`} class="btn-play">
+                PLAY CASE FILE // ENTER
+              </a>
+            {:else if activeUnlockId === game.id}
+              <div class="unlock-panel" in:slide={{ duration: 200 }}>
+                <input
+                  type="text"
+                  placeholder="ENTER ACCESS CODE"
+                  bind:value={unlockCode}
+                  onkeydown={(e) => {
+                    if (e.key === 'Enter') {
+                      handleUnlock(game.id);
+                    }
+                  }}
+                />
+                
+                {#if errorMessage}
+                  <div class="error-message">{errorMessage}</div>
+                {/if}
+
+                <div class="unlock-actions">
+                  <button class="btn-decrypt" onclick={() => handleUnlock(game.id)}>
+                    DECRYPT & PLAY
+                  </button>
+                  <button class="btn-cancel" onclick={closeUnlock}>
+                    CANCEL
+                  </button>
+                </div>
+              </div>
+            {:else}
+              <button class="btn-unlock" onclick={() => openUnlock(game.id)}>
+                🔒 ENTER ACCESS CODE
+              </button>
+            {/if}
           </div>
         </div>
       {/each}
     </div>
 
-    <div class="directory-footer">
-      <a href="/games" class="btn-main secondary">
-        VIEW ALL FULL DOSSIERS
+    <!-- ACCESS ALL FILES BUTTON -->
+    <div class="access-all-wrapper">
+      <a href="/games" class="btn-access-all">
+        ACCESS ALL CASE FILES
+        <span class="arrow">→</span>
       </a>
+      <p class="access-all-text">
+        Browse the complete archive of murder mystery case files
+      </p>
     </div>
   </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Murder Mystery Games KE. All rights reserved.</p>
+      <p class="footer-contact">
+        For commercial use or licensing inquiries, 
+        <a href="mailto:contact@murdermysterygameske.com" class="inline-link">contact us</a>.
+      </p>
+    </div>
+  </footer>
 </div>
 
 <style>
@@ -246,7 +333,7 @@
     --text: #ffffff;
     --muted: #8d93a8;
     --accent: #b12020;
-    --whatsapp-green: #25d366;
+    --success: #1f5c35;
   }
 
   .page-wrapper {
@@ -381,33 +468,74 @@
     color: white;
   }
 
-  /* Target specifically the WhatsApp community button for unique hover colors */
-  .btn-main.secondary.whatsapp-btn:hover {
-    background: var(--whatsapp-green);
-    border-color: var(--whatsapp-green);
-    color: #000000;
-    box-shadow: 0 0 30px rgba(37, 211, 102, 0.3);
+  /* HOW TO PLAY SECTION */
+  .how-to-play {
+    padding: 5rem 0;
+    background: #09090b;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
   }
 
-  .pricing-mini {
+  .how-to-header {
+    margin-bottom: 3rem;
+  }
+
+  .header-line {
+    width: 60px;
+    height: 2px;
+    background: var(--accent);
+    margin-top: 1rem;
+  }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+
+  .step-card {
+    background: rgba(16, 16, 20, 0.5);
     border: 1px solid var(--border);
-    padding: 0.9rem 1.2rem;
-    border-radius: 0.4rem;
-    background: rgba(255, 255, 255, 0.03);
-    text-align: left;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
   }
 
-  .label {
-    display: block;
-    font-size: 0.68rem;
+  .step-card:hover {
+    border-color: rgba(177, 32, 32, 0.3);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .step-number {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: rgba(177, 32, 32, 0.2);
+    margin-bottom: 1rem;
+    font-family: 'Cinzel', serif;
+  }
+
+  .step-card h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+  }
+
+  .step-card p {
     color: var(--muted);
-    letter-spacing: 0.14rem;
+    line-height: 1.6;
+    font-size: 0.9rem;
+    margin: 0;
   }
 
-  .amt {
-    display: block;
-    margin-top: 0.2rem;
-    font-weight: 800;
+  .inline-link {
+    color: var(--accent);
+    text-decoration: underline;
+    transition: color 0.2s ease;
+  }
+
+  .inline-link:hover {
+    color: #cd3737;
   }
 
   .intel-feed {
@@ -477,22 +605,6 @@
 
   h2 { font-family: 'Cinzel', serif; margin: 0; font-size: 2rem; }
 
-  .library-nav { display: flex; gap: 1rem; flex-wrap: wrap; }
-
-  .library-nav button {
-    background: transparent;
-    border: none;
-    color: var(--muted);
-    font-weight: 700;
-    cursor: pointer;
-    padding-bottom: 0.35rem;
-    transition: 0.2s ease;
-    border-bottom: 2px solid transparent;
-  }
-
-  .library-nav button:hover { color: white; }
-  .library-nav button.active { color: var(--accent); border-color: var(--accent); }
-
   .game-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -522,15 +634,14 @@
     position: absolute;
     right: 1rem;
     bottom: 1rem;
-    background: black;
+    background: var(--accent);
+    color: white;
     padding: 0.45rem 0.8rem;
     border-radius: 999px;
     font-size: 0.78rem;
     font-weight: 800;
     border: 1px solid rgba(255, 255, 255, 0.1);
   }
-
-  .price-tag.is-free { background: var(--accent); color: white; }
 
   .card-body { padding: 1.5rem; display: flex; flex-direction: column; flex: 1; }
 
@@ -547,14 +658,200 @@
 
   h3 { font-family: 'Cinzel', serif; margin: 0 0 1rem; line-height: 1.3; font-size: 1.3rem; }
 
-  .description { color: var(--muted); line-height: 1.7; font-size: 0.94rem; flex: 1; }
+  .description { color: var(--muted); line-height: 1.7; font-size: 0.94rem; flex: 1; margin-bottom: 1.5rem; }
 
-  .directory-footer { margin-top: 4rem; text-align: center; }
+  /* BUTTONS */
+  .btn-unlock {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(to bottom, #1a1a1f, #0d0d11);
+    border: 1px solid var(--accent);
+    color: white;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+    border-radius: 0.4rem;
+    transition: all 0.3s ease;
+    font-size: 0.85rem;
+  }
+
+  .btn-unlock:hover {
+    background: var(--accent);
+    box-shadow: 0 0 20px rgba(177, 32, 32, 0.3);
+  }
+
+  .btn-play {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(to bottom, #1c5332, #11351e);
+    border: 1px solid var(--success);
+    color: white;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 0.4rem;
+    transition: all 0.3s ease;
+    font-size: 0.85rem;
+  }
+
+  .btn-play:hover {
+    background: linear-gradient(to bottom, #2b7a48, #1c5332);
+    box-shadow: 0 0 20px rgba(31, 92, 53, 0.4);
+  }
+
+  .unlock-panel {
+    background: rgba(13, 13, 17, 0.95);
+    border: 1px solid var(--accent);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .unlock-panel input {
+    width: 100%;
+    padding: 12px;
+    background: #050507;
+    border: 1px solid #26262b;
+    color: white;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-align: center;
+    border-radius: 0.3rem;
+    box-sizing: border-box;
+  }
+
+  .unlock-panel input:focus {
+    outline: none;
+    border-color: var(--accent);
+  }
+
+  .error-message {
+    color: #ff4444;
+    font-size: 0.75rem;
+    text-align: center;
+    letter-spacing: 0.05rem;
+  }
+
+  .unlock-actions {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .btn-decrypt {
+    flex: 2;
+    padding: 10px;
+    background: var(--accent);
+    border: 1px solid #cd3737;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 0.05rem;
+    cursor: pointer;
+    border-radius: 0.3rem;
+    transition: background 0.2s ease;
+    font-size: 0.75rem;
+  }
+
+  .btn-decrypt:hover {
+    background: #cd3737;
+  }
+
+  .btn-cancel {
+    flex: 1;
+    padding: 10px;
+    background: transparent;
+    border: 1px solid #26262b;
+    color: #71717a;
+    font-weight: 700;
+    letter-spacing: 0.05rem;
+    cursor: pointer;
+    border-radius: 0.3rem;
+    transition: all 0.2s ease;
+    font-size: 0.75rem;
+  }
+
+  .btn-cancel:hover {
+    background: rgba(255, 255, 255, 0.03);
+    color: #e4e4e7;
+  }
+
+  /* ACCESS ALL FILES */
+  .access-all-wrapper {
+    margin-top: 4rem;
+    text-align: center;
+    padding: 3rem 0;
+  }
+
+  .btn-access-all {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem 2.5rem;
+    background: var(--accent);
+    color: white;
+    text-decoration: none;
+    font-weight: 800;
+    letter-spacing: 0.15rem;
+    font-size: 1.1rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    border: 2px solid var(--accent);
+  }
+
+  .btn-access-all:hover {
+    background: transparent;
+    color: var(--accent);
+    box-shadow: 0 0 30px rgba(177, 32, 32, 0.3);
+    transform: translateY(-2px);
+  }
+
+  .btn-access-all .arrow {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+  }
+
+  .btn-access-all:hover .arrow {
+    transform: translateX(5px);
+  }
+
+  .access-all-text {
+    margin-top: 1rem;
+    color: var(--muted);
+    font-size: 0.85rem;
+    letter-spacing: 0.05rem;
+  }
+
+  /* FOOTER */
+  .footer {
+    background: #09090b;
+    border-top: 1px solid var(--border);
+    padding: 2rem 0;
+    text-align: center;
+  }
+
+  .footer p {
+    color: var(--muted);
+    font-size: 0.85rem;
+    margin: 0.5rem 0;
+  }
+
+  .footer-contact {
+    font-size: 0.8rem;
+  }
 
   @media (max-width: 768px) {
     .section-heading { flex-direction: column; align-items: flex-start; }
     .dispatch-header { flex-wrap: wrap; justify-content: center; }
     .cta-group { flex-direction: column; }
-    .btn-main, .pricing-mini { width: 100%; max-width: 320px; text-align: center; }
+    .btn-main { width: 100%; max-width: 320px; text-align: center; }
+    .steps-grid { grid-template-columns: 1fr; }
+    
+    .btn-access-all {
+      width: 100%;
+      justify-content: center;
+    }
   }
 </style>
