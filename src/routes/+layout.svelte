@@ -8,7 +8,7 @@
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'Case Files', path: '/games' },
-    { name: 'Pricing', path: '/pricing' },
+    { name: 'How to Play', path: '/how-to-play' },
     { name: 'About', path: '/about' }
   ];
 
